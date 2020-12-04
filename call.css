@@ -1,0 +1,44 @@
+h1 {
+  text-align: center;
+}
+.box {
+  padding-left:
+    10px;
+}
+ul {
+  padding-left: 20px;
+}
+ul>li {
+  list-style-type:none;
+}
+.type-scheme {
+  color: #f30;
+}
+.type-ulk {
+  color:green;
+}
+.type-intent {
+  color: #06f;
+}
+.type-disable {
+  color:#cfcfcf;
+}
+a {
+  opacity:0.8;
+}
+a:hover {
+  opacity:1;
+  font-weight:bold;
+}
+#pc {
+  display:none;
+}
+#ios {
+  display:none;
+}
+#android {
+  display:none;
+}
+.show {
+  display:block!important;
+}

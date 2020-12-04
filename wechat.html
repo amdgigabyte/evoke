@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="apple-itunes-app" content="app-id=387682726">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starlink 测试 Demo</title>
+  <link href="./call.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <h1>测试各种情况的唤端</h1>
+  <div><script>document.write(location.href);</script></div>
+  <a href="./wechat.html">重置</a>
+  <div>
+    <h2>1. 说明</h2>
+    <ul>
+      <li><span class="type-scheme">红色</span>表示 Scheme 拉端</li>
+      <li><span class="type-ulk">绿色</span>表示 Universal Link 拉端</li>
+      <li><span class="type-intent">蓝色</span>表示 intent 拉端</li>
+    </ul>
+  </div>
+  <h2>2. 测试区</h2>
+  <div id="pc">请在手机环境打开本页面</div>
+  <div id='ios'>
+    <h3>当前环境: iOS</h3>
+    <div class="box">
+      <h3>自动唤端</h3>
+      <ul>
+        <li><a class="type-scheme" target="_self" href="./wechat.html?auto=true&os=ios&type=scheme&callType=alink">Scheme (利用 JS 创建 A 链接模拟点击)</a></li>
+        <li><a class="type-scheme" target="_self" href="./wechat.html?auto=true&os=ios&type=scheme&callType=iframe">Scheme (利用 JS 创建 Iframe src 跳转)</a></li>
+        <li><a class="type-disable" href="javascript:void(0);">Scheme (利用 JS 进行 Location 跳转)</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>手动唤端</h3>
+      <ul>
+        <li>
+          <a class="type-ulk" href="https://b.mashort.cn/ulk/taobao?smbUrl=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao">
+            Universal Link (A链接)
+          </a>
+        </li>
+        <li>
+          <a class="type-ulk" href="javascript:void(0);" onclick="callWithALink('https:\/\/b.mashort.cn/ulk/taobao?smbUrl=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">
+            Universal Link (利用 JS 创建 A 链接模拟点击)
+          </a>
+        </li>
+        <li>
+          <a class="type-disable" href="javascript:void(0);" onclick="callWithIframe('https:\/\/b.mashort.cn/ulk/taobao?smbUrl=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">
+            Universal Link (利用 JS 创建 Iframe src 跳转)
+          </a>
+        </li>
+        <li>
+          <a class="type-ulk" href="javascript:void(0);" onclick="callWithLocation('https:\/\/b.mashort.cn/ulk/taobao?smbUrl=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">
+            Universal Link (利用 JS 进行 Location 跳转)
+          </a>
+        </li>
+        <li>
+          <a class="type-scheme" href="tbopen://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao">
+            Scheme (A链接)
+          </a>
+        </li>
+        <li><a class="type-scheme" href="javascript:void(0);" onclick="callWithALink('tbopen:\/\/m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">Scheme (利用 JS 创建 A 链接模拟点击)</a></li>
+        <li><a class="type-scheme" href="javascript:void(0);" onclick="callWithIframe('tbopen:\/\/m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">Scheme (利用 JS 创建 Iframe src 跳转)</a></li>
+        <li><a class="type-disable" href="javascript:void(0);" onclick="callWithLocation('tbopen:\/\/m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">Scheme (利用 JS 进行 Location 跳转)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id='android'>
+    <h3>当前环境: Android</h3>
+    <div class="box">
+      <h3>自动唤端</h3>
+      <ul>
+        <li><a class="type-scheme" target="_self" href="wechat.html?auto=true&os=android&type=scheme&callType=alink">Scheme (利用 JS 创建 A 链接模拟点击)</a></li>
+        <li><a class="type-scheme" target="_self" href="wechat.html?auto=true&os=android&type=scheme&callType=iframe">Scheme (利用 JS 创建 Iframe src 跳转)</a></li>
+        <li><a class="type-disable" href="javascript:void(0);">Scheme (利用 JS 进行 Location 跳转)</a></li>
+        <li><a class="type-intent" target="_self" href="wechat.html?auto=true&os=android&type=intent&callType=location">Intent (利用 JS 进行 Location 跳转)</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>手动唤端</h3>
+      <ul>
+        <li>
+          <a class="type-scheme" href="tbopen://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao">
+            Scheme (A链接)
+          </a>
+        </li>
+        <li>
+          <a class="type-scheme" href="tbopen://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fh5.m.taobao.com%2Fawp%2Fcore%2Fdetail.htm%3Fspm%3Da215s.7406091.recommend.1.560c6770wRjIM5%26id%3D14836099171%26scm%3D1007.18975.103645.0%26pvid%3D6fb14fe3-e681-4199-bdf3-fe8e67433415%26utparam%3D%257B%2522ranger_buckets_native%2522%253A%2522%2522%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522mtx_ab%2522%253A9%252C%2522mtx_sab%2522%253A0%252C%2522scm%2522%253A%25221007.18975.103645.0%2522%252C%2522x_object_id%2522%253A%252214836099171%2522%257D">
+            Scheme (A链接 path 改为 xxx)
+          </a>
+        </li>
+        <li>
+          <a class="type-scheme" href="taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fh5.m.taobao.com%2Fawp%2Fcore%2Fdetail.htm%3Fspm%3Da215s.7406091.recommend.1.560c6770wRjIM5%26id%3D14836099171%26scm%3D1007.18975.103645.0%26pvid%3D6fb14fe3-e681-4199-bdf3-fe8e67433415%26utparam%3D%257B%2522ranger_buckets_native%2522%253A%2522%2522%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522mtx_ab%2522%253A9%252C%2522mtx_sab%2522%253A0%252C%2522scm%2522%253A%25221007.18975.103645.0%2522%252C%2522x_object_id%2522%253A%252214836099171%2522%257D">
+            Scheme (A链接  协议 改为 taobao)
+          </a>
+        </li>
+        <li>
+          <a class="type-scheme" href="eleme://web?url=https%3A%2F%2Fh5.m.taobao.com%2Fawp%2Fcore%2Fdetail.htm%3Fspm%3Da215s.7406091.recommend.1.560c6770wRjIM5%26id%3D14836099171%26scm%3D1007.18975.103645.0%26pvid%3D6fb14fe3-e681-4199-bdf3-fe8e67433415%26utparam%3D%257B%2522ranger_buckets_native%2522%253A%2522%2522%252C%2522x_object_type%2522%253A%2522item%2522%252C%2522mtx_ab%2522%253A9%252C%2522mtx_sab%2522%253A0%252C%2522scm%2522%253A%25221007.18975.103645.0%2522%252C%2522x_object_id%2522%253A%252214836099171%2522%257D">
+            Eleme
+          </a>
+        </li>
+        <li><a class="type-scheme" href="javascript:void(0);" onclick="callWithALink('tbopen:\/\/m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">Scheme (利用 JS 创建 A 链接模拟点击)</a></li>
+        <li><a class="type-scheme" href="javascript:void(0);" onclick="callWithIframe('tbopen:\/\/m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">Scheme (利用 JS 创建 Iframe src 跳转)</a></li>
+        <li><a class="type-disable" href="javascript:void(0);" onclick="callWithLocation('tbopen:\/\/m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Fpm%2Frax-tesla%2Fpages%2Findex-tao')">Scheme (利用 JS 进行 Location 跳转)</a></li>
+        <li><a class="type-intent" href="javascript:void(0);" onclick="callWithLocation('intent:\/\/m.taobao.com/tbopen/index.html?h5Url='+encodeURIComponent('https:\/\/market.m.taobao.com/app/pm/rax-tesla/pages/index-tao')+'#Intent;scheme=tbopen;package=com.taobao.taobao;end')">Intent (利用 JS 进行 Location 跳转)</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="./call.js"></script>
+</body>
+</html> 
